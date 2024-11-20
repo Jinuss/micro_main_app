@@ -11,6 +11,13 @@ registerMicroApps([
     entry: "//localhost:5157",
     container: "#main_container",
     activeRule: "/cesium",
+    props: {
+      sandbox: {
+        strictStyleIsolation: false,
+        disableCss: true,  // 禁用沙箱中的 CSS 隔离
+        disableInlineScript: false  // 允许内联脚本
+      }
+    }
   },
 ]);
 start();
