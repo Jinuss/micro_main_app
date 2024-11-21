@@ -1,23 +1,22 @@
 import { createApp } from "vue";
 import { registerMicroApps, start } from "qiankun";
+import "../reset.css";
 import "./style.css";
 import App from "./App.vue";
+import router from "./router";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+
+app.use(router);
+
+app.mount("#app");
 
 registerMicroApps([
   {
-    name: "iceApp",
+    name: "cesiumApp",
     entry: "//localhost:5157",
     container: "#main_container",
     activeRule: "/cesium",
-    props: {
-      sandbox: {
-        strictStyleIsolation: false,
-        disableCss: true,  // 禁用沙箱中的 CSS 隔离
-        disableInlineScript: false  // 允许内联脚本
-      }
-    }
   },
 ]);
 start();
