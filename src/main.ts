@@ -18,5 +18,17 @@ registerMicroApps([
     container: "#main_container",
     activeRule: "/cesium",
   },
+  {
+    name: "mapboxApp",
+    entry: "//localhost:5158",
+    container: "#main_container",
+    activeRule: "/mapbox",
+  },
+  {
+    name: "openlayersApp",
+    entry: "//localhost:5159",
+    container: "#main_container",
+    activeRule: "/openlayers",
+  },
 ]);
 start();
