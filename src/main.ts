@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import { registerMicroApps, start } from "qiankun";
+import { registerMicroApps, setDefaultMountApp, start } from "qiankun";
 import "../reset.css";
 import "./style.css";
 import App from "./App.vue";
@@ -24,11 +24,15 @@ registerMicroApps([
     container: "#main_container",
     activeRule: "/mapbox",
   },
-  {
-    name: "openlayersApp",
-    entry: "//localhost:5159",
-    container: "#main_container",
-    activeRule: "/openlayers",
-  },
+  /*{
+  name: "openlayersApp",
+  entry: "//localhost:5159",
+  container: "#main_container",
+  activeRule: "/openlayers",
+},
+*/
 ]);
+
 start();
+
+setDefaultMountApp("/mapbox");
